@@ -32,7 +32,7 @@ function startRound(){
         //display text
         header.textContent = 'Final Result'
         instructionsDisplay.textContent = "your average reaction speed was: "
-        numberDisplay.textContent = `${correctAnswers === 0 ? 0 : totalReactionTime / correctAnswers}`;
+        numberDisplay.textContent = `${correctAnswers === 0 ? 0 : Math.floor(totalReactionTime / correctAnswers)}`;
         startButton.style.display = 'unset';
         startButton.textContent = 'Restart Game';
         //keep game paused and wait for user to 'restart game'
@@ -65,7 +65,7 @@ function startRound(){
                     //start timer
                 startTime = new Date().getTime();
             }
-        }, Math.ceil(Math.random() * 2000) + 2000)
+        }, ( Math.ceil(Math.random() * 2000) + 2000 ))
     }
 }
 
@@ -85,7 +85,7 @@ keys.forEach(key => {
                 setTimeout(() => {
                     gamePaused = true;
                     disableKeys();
-                }, 1);
+                }, 10);
             }
 
             //if a user clicks on time
@@ -112,7 +112,7 @@ keys.forEach(key => {
                     setTimeout(() => {
                         gamePaused = true;
                         disableKeys();
-                    }, 1);
+                    }, 10);
                 }
                 // if user clicked a wrong number
                 else{
@@ -126,7 +126,7 @@ keys.forEach(key => {
                     setTimeout(() => {
                         gamePaused = true;
                         disableKeys();
-                    }, 1);
+                    }, 10);
                 }
             }
         }
